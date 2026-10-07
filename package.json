@@ -1,0 +1,24 @@
+{
+  "name": "redmine-readonly-mcp",
+  "version": "0.1.0",
+  "description": "Read-only Redmine MCP server for Claude Code: fetch issues and download attachments without exposing credentials to the model.",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": { "redmine-readonly-mcp": "dist/index.js", "redmine-ticket": "dist/cli.js" },
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "ticket": "node dist/cli.js",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.6.0"
+  }
+}
